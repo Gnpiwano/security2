@@ -8,6 +8,9 @@ app.controller('myCtrl', function($scope, $crypto, $mdDialog) {
     this.password = "";
     this.currentItem = {};
 
+    this.Decusername = "";
+    this.Decpassword = "";
+    
     this.allItems = [];
 
     this.init = function () {
@@ -15,7 +18,7 @@ app.controller('myCtrl', function($scope, $crypto, $mdDialog) {
     }
 
     this.encryptData = function () {
-        $crypto.setCrypteKey(self.password);
+        $crypto.setCrypteKey(self.password + self.name);
         var row = {
             name: self.name,
             email: self.email,
@@ -31,7 +34,7 @@ app.controller('myCtrl', function($scope, $crypto, $mdDialog) {
             $mdDialog.show(
                 $mdDialog.alert()
                     .title('Decrypted Message')
-                    .textContent($crypto.decrypt(self.currentItem.text, self.password))
+                    .textContent($crypto.decrypt(self.currentItem.text, self.Decpassword + self.Decusername))
                     .ok('Awesome!')
                     .targetEvent(event)
             );

@@ -25,19 +25,19 @@
     <form layout="column" style="width: 300px;" ng-submit="ctrl.encryptData()" layout-margin>
         <h1>  Encrypt-R-us </h1>
         <md-input-container>
-            <label>Naam</label>
+            <label>Name</label>
             <input minlength="2" ng-model="ctrl.name" required>
         </md-input-container>
         <md-input-container>
-            <label>Email</label>
-            <input required type="email" name="clientEmail" ng-model="ctrl.email" minlength="6" maxlength="100" ng-pattern="/^.+@.+\..+$/" required>
+            <label>title</label>
+            <input minlength="2" ng-model="ctrl.email" required>
         </md-input-container>
         <md-input-container class="md-block">
             <label>Text To Encrypt</label>
             <textarea ng-model="ctrl.text" md-maxlength="3000" rows="6" md-select-on-focus required></textarea>
         </md-input-container>
         <md-input-container>
-            <label>Wachtwoord</label>
+            <label>Password</label>
             <input minlength="2" ng-model="ctrl.password" required>
         </md-input-container>
         <md-button type="submit" class="md-primary btn btn-primary">Start Encryption</md-button>
@@ -46,7 +46,6 @@
         <md-subheader class="md-no-sticky">Encrypte Messages</md-subheader>
         <md-list-item ng-repeat="message in ctrl.allItems" class="md-3-line" ng-click="ctrl.setCurrentItem(message)" style="height: 100px;">
             <div class="md-list-item-text" layout="column">
-                <h3>{{ message.name }}</h3>
                 <h4>{{ message.email }}</h4>
                 <md-button class="md-secondary" ng-click="doSecondaryAction($event, message)">More Info</md-button>
             </div>
@@ -58,8 +57,12 @@
         <h1>  Decrypt-R-us </h1>
         <p> {{ ctrl.currentItem.name }}</p>
         <md-input-container>
-            <label>Wachtwoord</label>
-            <input minlength="2" ng-model="ctrl.password" required>
+            <label>Name</label>
+            <input minlength="2" ng-model="ctrl.Decusername" required>
+        </md-input-container>
+        <md-input-container>
+            <label>Password</label>
+            <input minlength="2" ng-model="ctrl.Decpassword" required>
         </md-input-container>
         <md-button type="submit" class="md-primary btn btn-primary">Start Decryption</md-button>
     </form>
