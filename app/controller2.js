@@ -27,7 +27,7 @@ app.controller('myCtrl', function($scope, $crypto, $mdDialog) {
     }
     
     this.decryptData = function(event) {
-        if(self.currentItem !== undefined && self.currentItem == null) {
+        if(self.currentItem !== undefined && self.currentItem != null) {
             $mdDialog.show(
                 $mdDialog.alert()
                     .title('Decrypted Message')

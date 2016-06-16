@@ -44,7 +44,7 @@
     </form>
     <md-list ng-cloak layout-margin style="width: 350px;">
         <md-subheader class="md-no-sticky">Encrypte Messages</md-subheader>
-        <md-list-item ng-repeat="message in ctrl.allItems" class="md-3-line" ng-click="ctrl.setCurrentItem(message)">
+        <md-list-item ng-repeat="message in ctrl.allItems" class="md-3-line" ng-click="ctrl.setCurrentItem(message)" style="height: 100px;">
             <div class="md-list-item-text" layout="column">
                 <h3>{{ message.name }}</h3>
                 <h4>{{ message.email }}</h4>
